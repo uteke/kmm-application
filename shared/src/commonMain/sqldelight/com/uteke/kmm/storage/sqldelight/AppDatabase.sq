@@ -1,0 +1,23 @@
+CREATE TABLE Product (
+id INTEGER NOT NULL PRIMARY KEY,
+title TEXT NOT NULL,
+description TEXT NOT NULL,
+kind TEXT NOT NULL,
+type TEXT NOT NULL,
+price INTEGER NOT NULL DEFAULT 0,
+ingredients TEXT,
+allergens TEXT,
+images TEXT
+);
+
+selectAll:
+SELECT * FROM Product;
+
+selectById:
+SELECT * FROM Product WHERE id = ?;
+
+insertProduct:
+INSERT OR IGNORE INTO Product(id, title, description, kind, type, price, ingredients, allergens, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+deleteAll:
+DELETE FROM Product;
