@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.compose.runtime:runtime:1.1.0-rc03@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/eff1f87b7c0e2f1d9b4c3db4387cedc7/transformed/runtime-1.1.0-rc03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eff1f87b7c0e2f1d9b4c3db4387cedc7/transformed/runtime-1.1.0-rc03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eff1f87b7c0e2f1d9b4c3db4387cedc7/transformed/runtime-1.1.0-rc03/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cbbae7e773fd586d91c308a2ede7531a/transformed/runtime-1.1.0-rc03/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cbbae7e773fd586d91c308a2ede7531a/transformed/runtime-1.1.0-rc03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cbbae7e773fd586d91c308a2ede7531a/transformed/runtime-1.1.0-rc03/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.compose.runtime/runtime/1.1.0-rc03/834981b27154426b2cab36a17e7463dc8219ef7d/runtime-1.1.0-rc03-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

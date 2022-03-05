@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.compose.ui:ui-tooling-preview:1.1.0-rc03@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6f7e760e78215e8e113a22f6ad671a2d/transformed/ui-tooling-preview-1.1.0-rc03/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6f7e760e78215e8e113a22f6ad671a2d/transformed/ui-tooling-preview-1.1.0-rc03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6f7e760e78215e8e113a22f6ad671a2d/transformed/ui-tooling-preview-1.1.0-rc03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0ba8e2796a1fa3d6e6071671b9f27be9/transformed/ui-tooling-preview-1.1.0-rc03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0ba8e2796a1fa3d6e6071671b9f27be9/transformed/ui-tooling-preview-1.1.0-rc03/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0ba8e2796a1fa3d6e6071671b9f27be9/transformed/ui-tooling-preview-1.1.0-rc03/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.compose.ui/ui-tooling-preview/1.1.0-rc03/90bbc79411d268373f8af19c38292749d4b2b15b/ui-tooling-preview-1.1.0-rc03-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

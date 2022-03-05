@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup.sqldelight:android-driver:1.5.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6a9570fbfd273fb5097838867cc031b0/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/116a95816d0dfc3cd11c7157a4f3a12d/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ee061b29bfe18b07531c3d4c85b9ab5a/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f8043112c820028d5e89c6cb2ea1ea70/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/547800c7ff0fbad49a3acf2ff2486723/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4af2b65abe3c81519237564d7e273fdd/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ed4b2a4a90fd8022da53691b6fc1397c/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6d86b899a695b8b3ee5d69b4c9a24002/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e174483718c67e9df2aa3e2bfbe91b56/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/76f962c49c6e43a92890101a04ac71e2/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bd7d4307599727dd22d1706b32e612bc/transformed/android-driver-1.5.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f58a7f9512e40d913fa15fbb89a7b280/transformed/android-driver-1.5.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f58a7f9512e40d913fa15fbb89a7b280/transformed/android-driver-1.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f58a7f9512e40d913fa15fbb89a7b280/transformed/android-driver-1.5.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/975a1be58cd23eaacd1f41bbbba002c3/transformed/android-driver-1.5.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/975a1be58cd23eaacd1f41bbbba002c3/transformed/android-driver-1.5.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/975a1be58cd23eaacd1f41bbbba002c3/transformed/android-driver-1.5.3/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/android-driver/1.5.3/4ca6c8e164d4273511baf3d2c826a9e60d9167f4/android-driver-1.5.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/android-driver/1.5.3/a176d08e5c5dd87c7eb684ab6e4a06774d16ddaf/android-driver-1.5.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

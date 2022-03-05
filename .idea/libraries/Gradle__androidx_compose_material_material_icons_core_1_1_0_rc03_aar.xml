@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.compose.material:material-icons-core:1.1.0-rc03@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ecc35c32c338456a68e97b3a19dc5155/transformed/material-icons-core-1.1.0-rc03/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ecc35c32c338456a68e97b3a19dc5155/transformed/material-icons-core-1.1.0-rc03/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ecc35c32c338456a68e97b3a19dc5155/transformed/material-icons-core-1.1.0-rc03/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f394517144da780c30dff2aea72fea9f/transformed/material-icons-core-1.1.0-rc03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f394517144da780c30dff2aea72fea9f/transformed/material-icons-core-1.1.0-rc03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f394517144da780c30dff2aea72fea9f/transformed/material-icons-core-1.1.0-rc03/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.compose.material/material-icons-core/1.1.0-rc03/75cdc89520213df9220330f01e8a405be059759e/material-icons-core-1.1.0-rc03-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

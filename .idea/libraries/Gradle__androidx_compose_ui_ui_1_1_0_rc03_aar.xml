@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.compose.ui:ui:1.1.0-rc03@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/20d3e42aebd044f33bcb3ce38947faa3/transformed/ui-1.1.0-rc03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/20d3e42aebd044f33bcb3ce38947faa3/transformed/ui-1.1.0-rc03/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/20d3e42aebd044f33bcb3ce38947faa3/transformed/ui-1.1.0-rc03/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/fccbc2dd2c2f3555a7b114b976bd2e2b/transformed/ui-1.1.0-rc03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fccbc2dd2c2f3555a7b114b976bd2e2b/transformed/ui-1.1.0-rc03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fccbc2dd2c2f3555a7b114b976bd2e2b/transformed/ui-1.1.0-rc03/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.compose.ui/ui/1.1.0-rc03/ed9f7a2ad8b41172f8e6a6775bdd53797852540b/ui-1.1.0-rc03-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
