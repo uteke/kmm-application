@@ -5,6 +5,7 @@ import com.uteke.kmm.feature.common.State
 
 data class ProductItemState(
     val isLoaderVisible: Boolean = false,
+    val isProductVisible: Boolean = false,
     val id: Int = 0,
     val title: String = "",
     val description: String = "",

@@ -20,6 +20,7 @@ object AndroidX {
         const val material3 = "androidx.compose.material3:material3:${Version.composeMaterial3}"
         const val runtime = "androidx.compose.runtime:runtime:${Version.compose}"
         const val ui = "androidx.compose.ui:ui:${Version.compose}"
+        const val uiTooling = "androidx.compose.ui:ui-tooling:${Version.compose}"
         const val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Version.compose}"
     }
 

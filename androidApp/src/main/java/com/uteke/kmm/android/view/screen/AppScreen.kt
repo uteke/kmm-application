@@ -14,7 +14,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.uteke.kmm.android.view.feature.ProductItemScreen
+import com.uteke.kmm.android.view.screen.productitem.ProductItemScreen
+import com.uteke.kmm.android.view.screen.productlist.ProductListScreen
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.compose.get
 

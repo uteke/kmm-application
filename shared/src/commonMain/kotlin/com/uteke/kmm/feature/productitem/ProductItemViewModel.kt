@@ -35,6 +35,7 @@ open class ProductItemViewModel(
                             ingredients = product.ingredients.joinToString(),
                             allergens = product.allergens.joinToString(),
                             images = product.images,
+                            isProductVisible = true,
                             isLoaderVisible = false,
                             errorState = ErrorState()
                         )
@@ -43,6 +44,7 @@ open class ProductItemViewModel(
                 onError = { throwable ->
                     transform { previousState ->
                         previousState.copy(
+                            isProductVisible = false,
                             isLoaderVisible = false,
                             errorState = ErrorState(
                                 message = throwable.message ?: "ERROR",

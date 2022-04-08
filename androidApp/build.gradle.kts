@@ -45,6 +45,7 @@ dependencies {
     implementation(Dependencies.androidX.compose.material)
     implementation(Dependencies.androidX.compose.runtime)
     implementation(Dependencies.androidX.compose.ui)
+    debugImplementation(Dependencies.androidX.compose.uiTooling)
     implementation(Dependencies.androidX.compose.uiToolingPreview)
     implementation(Dependencies.androidX.core)
     implementation(Dependencies.androidX.navigation.compose)
