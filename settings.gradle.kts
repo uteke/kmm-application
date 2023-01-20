@@ -9,3 +9,5 @@ pluginManagement {
 rootProject.name = "kmm-application"
 include(":androidApp")
 include(":shared")
+
+enableFeaturePreview("VERSION_CATALOGS")

@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
 }
 
+@Suppress("UnstableApiUsage")
 android {
     compileSdk = AppConfig.compileSdk
 
@@ -22,7 +23,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.androidX.compose.compilerVersion
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.asProvider().get()
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
@@ -35,19 +36,19 @@ android {
 
 dependencies {
     implementation(project(":shared"))
-    implementation(Dependencies.koin.androidCompose)
-    implementation(Dependencies.androidX.activity.compose)
-    implementation(Dependencies.androidX.activity.core)
-    implementation(Dependencies.androidX.appCompat)
-    implementation(Dependencies.androidX.compose.compiler)
-    implementation(Dependencies.androidX.compose.foundation)
-    implementation(Dependencies.androidX.compose.material3)
-    implementation(Dependencies.androidX.compose.material)
-    implementation(Dependencies.androidX.compose.runtime)
-    implementation(Dependencies.androidX.compose.ui)
-    implementation(Dependencies.androidX.compose.uiToolingPreview)
-    implementation(Dependencies.androidX.core)
-    implementation(Dependencies.androidX.navigation.compose)
-    implementation(Dependencies.coil.compose)
-    implementation(Dependencies.google.material)
+    implementation(libs.koin.android.compose)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.activity.core)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.compose.compiler)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.uiToolingPreview)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.coil)
+    implementation(libs.google.material)
 }

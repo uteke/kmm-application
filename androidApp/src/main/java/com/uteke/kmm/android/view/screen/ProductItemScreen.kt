@@ -1,4 +1,4 @@
-package com.uteke.kmm.android.view.feature
+package com.uteke.kmm.android.view.screen
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -11,8 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
-import com.uteke.kmm.android.view.screen.ErrorView
-import com.uteke.kmm.android.view.screen.LoaderView
 import com.uteke.kmm.feature.common.ErrorState
 import com.uteke.kmm.feature.productitem.ProductItemAction
 import com.uteke.kmm.feature.productitem.ProductItemViewModel
@@ -24,6 +22,7 @@ import kotlinx.coroutines.flow.mapLatest
 @ExperimentalCoroutinesApi
 @Composable
 fun ProductItemScreen(
+    modifier: Modifier,
     viewModel: ProductItemViewModel,
     productId: Int
 ) {
@@ -79,7 +78,7 @@ fun ProductItemScreen(
         .distinctUntilChanged()
         .collectAsState("")
 
-    Column {
+    Column(modifier = modifier) {
         LazyRow(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
             items(
                 count = images.size,
@@ -131,11 +130,11 @@ fun ProductItemScreen(
         )
 
         if (isLoaderVisible) {
-            LoaderView()
+            LoaderView(modifier = Modifier.fillMaxSize())
         }
 
         if (errorState.isVisible) {
-            ErrorView(message = errorState.message)
+            ErrorView(modifier = Modifier.fillMaxSize(), message = errorState.message)
         }
     }
 }

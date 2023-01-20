@@ -10,20 +10,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun LoaderView() {
+fun LoaderView(modifier: Modifier = Modifier) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier
     ) {
         CircularProgressIndicator(progress = 0.5f)
     }
 }
 
 @Composable
-fun ErrorView(message: String) {
+fun ErrorView(modifier: Modifier = Modifier, message: String) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier
     ) {
         Text(
             text = message,

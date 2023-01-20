@@ -18,50 +18,47 @@ kotlin {
         }
     }
 
+    @Suppress("UnstableApiUsage")
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Dependencies.koin.core)
-                implementation(Dependencies.kotlinX.coroutine)
-                implementation(Dependencies.ktor.clientCore)
-                implementation(Dependencies.ktor.clientLogging)
-                implementation(Dependencies.ktor.clientSerialization)
-                implementation(Dependencies.sqlDelight.coroutines)
-                implementation(Dependencies.sqlDelight.runtime)
-                implementation(Dependencies.touchLab.stately)
+                implementation(libs.koin.core)
+                implementation(libs.kotlinx.coroutines.core)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.logging)
+                implementation(libs.ktor.client.serialization)
+                implementation(libs.sqldelight.coroutines)
+                implementation(libs.stately)
             }
         }
         getByName("androidMain") {
             dependencies {
-                implementation(Dependencies.kotlinX.android.serialization)
-                implementation(Dependencies.koin.android)
-                implementation(Dependencies.ktor.android.client)
-                implementation(Dependencies.ktor.android.logging)
-                implementation(Dependencies.sqlDelight.android.driver)
+                implementation(libs.kotlinx.serialization.jvm)
+                implementation(libs.koin.android)
+                implementation(libs.ktor.client.android)
+                implementation(libs.ktor.client.logging.jvm)
+                implementation(libs.sqldelight.android.driver)
             }
         }
         val iosX64Main by getting {
             dependencies {
-                implementation(Dependencies.kotlinX.ios.x64.serialization)
-                implementation(Dependencies.ktor.ios.x64.logging)
+                implementation(libs.kotlinx.serialization.iosx64)
+                implementation(libs.ktor.client.logging.iosx64)
+                implementation(libs.sqldelight.native.driver.iosx64)
             }
         }
         val iosArm64Main by getting {
             dependencies {
-                implementation(Dependencies.kotlinX.ios.arm64.serialization)
-                implementation(Dependencies.ktor.ios.arm64.logging)
+                implementation(libs.kotlinx.serialization.iosarm64)
+                implementation(libs.ktor.client.logging.iosarm64)
+                implementation(libs.sqldelight.native.driver.iosarm64)
             }
         }
         val iosSimulatorArm64Main by getting
         create("iosMain") {
             dependencies {
-                implementation(Dependencies.ktor.ios.client)
-                implementation(Dependencies.sqlDelight.ios.driver)
-                implementation(Dependencies.kotlinX.coroutine) {
-                    version {
-                        strictly(Dependencies.kotlinX.coroutineVersion)
-                    }
-                }
+                implementation(libs.ktor.client.ios)
+                implementation(libs.kotlinx.coroutines.core)
             }
 
             dependsOn(commonMain)
@@ -95,6 +92,7 @@ kotlin {
     }
 }
 
+@Suppress("UnstableApiUsage")
 android {
     compileSdk = AppConfig.compileSdk
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")

@@ -27,6 +27,7 @@ import kotlinx.coroutines.flow.mapLatest
 @SuppressLint("FlowOperatorInvokedInComposition")
 @Composable
 fun ProductListScreen(
+    modifier: Modifier,
     viewModel: ProductListViewModel,
     navController: NavController
 ) {
@@ -57,7 +58,7 @@ fun ProductListScreen(
         .distinctUntilChanged()
         .collectAsState(ErrorState())
 
-    Column {
+    Column(modifier = modifier) {
         if (isProductsVisible) {
             ProductListView(
                 productStates = productStates,
@@ -68,11 +69,11 @@ fun ProductListScreen(
         }
 
         if (isLoaderVisible) {
-            LoaderView()
+            LoaderView(modifier = Modifier.fillMaxSize())
         }
 
         if (errorState.isVisible) {
-            ErrorView(message = errorState.message)
+            ErrorView(modifier = Modifier.fillMaxSize(), message = errorState.message)
         }
     }
 }
