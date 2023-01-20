@@ -22,7 +22,28 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# kmm
+# MacOS
+**/.DS_Store
+
+# Gradle
+.gradle/
+build/
+
+# IntelliJ
+*.xml
+.idea
+.cxx
+
+# Android Studio
+local.properties
+captures/
+.externalNativeBuild
+*.aab
+*.apk
+*.dex
+*.hprof
+
+# KMM
 androidApp/build/
 androidApp/.gradle/
 shared/build/
