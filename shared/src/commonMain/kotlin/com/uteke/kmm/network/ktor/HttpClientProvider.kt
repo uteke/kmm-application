@@ -1,12 +1,11 @@
 package com.uteke.kmm.network.ktor
 
 import io.ktor.client.*
-import io.ktor.client.features.*
-import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.features.json.serializer.*
-import io.ktor.client.features.logging.*
+import io.ktor.client.plugins.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.plugins.logging.*
+import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
-
 
 class HttpClientProvider {
     fun provide(): HttpClient = HttpClient {
@@ -14,11 +13,12 @@ class HttpClientProvider {
             connectTimeoutMillis = TIMEOUT_IN_MILLIS
             requestTimeoutMillis = TIMEOUT_IN_MILLIS
         }
-        install(JsonFeature) {
-            val json = Json {
-                ignoreUnknownKeys = true
-            }
-            serializer = KotlinxSerializer(json)
+        install(ContentNegotiation) {
+            json(
+                Json {
+                    ignoreUnknownKeys = true
+                }
+            )
         }
         install(Logging) {
             level = LogLevel.ALL

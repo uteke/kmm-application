@@ -3,6 +3,7 @@ package com.uteke.kmm.network.ktor.product
 import com.uteke.kmm.network.product.ProductRemoteModel
 import com.uteke.kmm.network.product.ProductService
 import io.ktor.client.*
+import io.ktor.client.call.*
 import io.ktor.client.request.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -12,7 +13,9 @@ class KtorProductService(
 ) : ProductService {
     override fun getProducts(): Flow<List<ProductRemoteModel>> =
         flow {
-            val products = httpClient.get<List<ProductJsonModel>>(ENDPOINT)
+            val products = httpClient
+                .get(ENDPOINT)
+                .body<List<ProductJsonModel>>()
                 .map { it.toProductRemoteModel() }
             emit(products)
         }

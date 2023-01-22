@@ -1,21 +1,20 @@
 [versions]
-androidx-activity = "1.4.0"
-androidx-appcompat = "1.4.1"
+androidx-activity = "1.6.1"
+androidx-appcompat = "1.6.0"
 androidx-compose = "1.3.1"
 androidx-compose-material3 = "1.0.1"
-androidx-core = "1.7.0"
-androidx-material = "1.3.1"
-androidx-navigation = "2.4.0"
-coil = "1.4.0"
+androidx-core = "1.9.0"
+androidx-navigation = "2.5.3"
+coil = "2.2.2"
 gradle = "7.2.2"
-google-material = "1.3.0"
+google-material = "1.7.0"
 koin = "3.1.5"
 kotlin = "1.7.10"
-kotlinx-coroutines = "1.6.0-native-mt"
-kotlinx-serialization = "1.3.2"
-ktor = "1.6.7"
+kotlinx-coroutines = "1.6.3-native-mt"
+kotlinx-serialization = "1.4.1"
+ktor = "2.2.2"
 sqldelight = "1.5.4"
-stately = "1.2.1"
+stately = "1.2.2"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle"}
@@ -57,12 +56,16 @@ kotlinx-serialization-iosx64 = { module = "org.jetbrains.kotlinx:kotlinx-seriali
 # Ktor
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-contentnegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-contentnegotiation-jvm = { module = "io.ktor:ktor-client-content-negotiation-jvm", version.ref = "ktor" }
+ktor-client-contentnegotiation-iosarm64 = { module = "io.ktor:ktor-client-content-negotiation-iosarm64", version.ref = "ktor" }
+ktor-client-contentnegotiation-iosx64 = { module = "io.ktor:ktor-client-content-negotiation-iosx64", version.ref = "ktor" }
 ktor-client-ios = { module = "io.ktor:ktor-client-ios", version.ref = "ktor" }
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-client-logging-iosarm64 = { module = "io.ktor:ktor-client-logging-iosarm64", version.ref = "ktor" }
 ktor-client-logging-iosx64 = { module = "io.ktor:ktor-client-logging-iosx64", version.ref = "ktor" }
 ktor-client-logging-jvm = { module = "io.ktor:ktor-client-logging-jvm", version.ref = "ktor" }
-ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
+ktor-client-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 # SQLDelight
 sqldelight-android-driver = { module = "com.squareup.sqldelight:android-driver", version.ref = "sqldelight" }
 sqldelight-coroutines = { module = "com.squareup.sqldelight:coroutines-extensions", version.ref = "sqldelight" }

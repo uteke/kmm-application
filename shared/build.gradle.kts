@@ -27,6 +27,7 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.logging)
+                implementation(libs.ktor.client.contentnegotiation)
                 implementation(libs.ktor.client.serialization)
                 implementation(libs.sqldelight.coroutines)
                 implementation(libs.stately)
@@ -38,6 +39,7 @@ kotlin {
                 implementation(libs.koin.android)
                 implementation(libs.ktor.client.android)
                 implementation(libs.ktor.client.logging.jvm)
+                implementation(libs.ktor.client.contentnegotiation.jvm)
                 implementation(libs.sqldelight.android.driver)
             }
         }
@@ -45,6 +47,7 @@ kotlin {
             dependencies {
                 implementation(libs.kotlinx.serialization.iosx64)
                 implementation(libs.ktor.client.logging.iosx64)
+                implementation(libs.ktor.client.contentnegotiation.iosx64)
                 implementation(libs.sqldelight.native.driver.iosx64)
             }
         }
@@ -52,6 +55,7 @@ kotlin {
             dependencies {
                 implementation(libs.kotlinx.serialization.iosarm64)
                 implementation(libs.ktor.client.logging.iosarm64)
+                implementation(libs.ktor.client.contentnegotiation.iosarm64)
                 implementation(libs.sqldelight.native.driver.iosarm64)
             }
         }
