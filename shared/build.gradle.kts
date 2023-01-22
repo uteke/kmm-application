@@ -1,8 +1,9 @@
+@Suppress("UnstableApiUsage")
 plugins {
-    kotlin("multiplatform")
-    id("kotlinx-serialization")
-    id("com.android.library")
-    id("com.squareup.sqldelight")
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.sqldelight)
+    alias(libs.plugins.android.library)
 }
 
 kotlin {

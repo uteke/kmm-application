@@ -18,12 +18,15 @@ sqldelight = "1.5.4"
 stately = "1.2.1"
 
 [plugins]
-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "gradle"}
+android-library = { id = "com.android.library", version.ref = "gradle"}
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 sqldelight = { id = "com.squareup.sqldelight", version.ref = "sqldelight" }
 
 [libraries]
 # AndroidX
-android-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-activity-core = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
@@ -46,9 +49,6 @@ koin-android-compose = { module = "io.insert-koin:koin-androidx-compose", versio
 koin-android-ext = { module = "io.insert-koin:koin-android-ext", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin" }
-# Kotlin
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
 # KotlinX
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-serialization-jvm = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core-jvm", version.ref = "kotlinx-serialization" }
@@ -66,7 +66,6 @@ ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", vers
 # SQLDelight
 sqldelight-android-driver = { module = "com.squareup.sqldelight:android-driver", version.ref = "sqldelight" }
 sqldelight-coroutines = { module = "com.squareup.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
-sqldelight-gradle-plugin = { module = "com.squareup.sqldelight:gradle-plugin", version.ref = "sqldelight" }
 sqldelight-native-driver-iosarm64 = { module = "com.squareup.sqldelight:native-driver-iosarm64", version.ref = "sqldelight" }
 sqldelight-native-driver-iosx64 = { module = "com.squareup.sqldelight:native-driver-iosx64", version.ref = "sqldelight" }
 sqldelight-runtime-iosarm64 = { module = "com.squareup.sqldelight:runtime-iosarm64", version.ref = "sqldelight" }
