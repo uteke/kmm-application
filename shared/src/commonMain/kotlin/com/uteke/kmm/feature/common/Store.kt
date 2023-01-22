@@ -1,12 +1,8 @@
 package com.uteke.kmm.feature.common
 
-import co.touchlab.stately.ensureNeverFrozen
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
-import org.koin.core.qualifier.qualifier
-import kotlin.coroutines.CoroutineContext
 
 abstract class Store<S : State, E: Event, A : Action>(
     initialState: S,
@@ -19,10 +15,6 @@ abstract class Store<S : State, E: Event, A : Action>(
     private val eventFlow: MutableSharedFlow<E> = MutableSharedFlow()
     val eventChanges: SharedFlow<E>
         get() = eventFlow.asSharedFlow()
-
-    init {
-        ensureNeverFrozen()
-    }
 
     fun cancel() {
         scope.cancel()

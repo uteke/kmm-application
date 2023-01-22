@@ -30,7 +30,6 @@ kotlin {
                 implementation(libs.ktor.client.contentnegotiation)
                 implementation(libs.ktor.client.serialization)
                 implementation(libs.sqldelight.coroutines)
-                implementation(libs.stately)
             }
         }
         getByName("androidMain") {

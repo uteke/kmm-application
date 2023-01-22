@@ -1,6 +1,5 @@
 package com.uteke.kmm.feature.common
 
-import co.touchlab.stately.ensureNeverFrozen
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.koin.core.component.KoinComponent
@@ -15,10 +14,6 @@ abstract class ViewModel<S : State, E: Event, A : Action>(
         println(throwable)
     }
 
-    init {
-        ensureNeverFrozen()
-    }
-
     override val coroutineContext: CoroutineContext
         get() = job + schedulerProvider.ui() + exceptionHandler
 
@@ -29,10 +24,6 @@ abstract class ViewModel<S : State, E: Event, A : Action>(
     private val eventFlow: MutableSharedFlow<E> = MutableSharedFlow()
     val eventChanges: SharedFlow<E>
         get() = eventFlow.asSharedFlow()
-
-    init {
-        ensureNeverFrozen()
-    }
 
     fun cancel() {
         job.cancel()
