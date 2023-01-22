@@ -41,7 +41,9 @@ fun AppScreen() {
                     },
                     navigationIcon = {
                         Box(contentAlignment = Alignment.Center) {
-                            IconButton(onClick = { navController.popBackStack() }) {
+                            IconButton(
+                                onClick = { navController.popBackStack() },
+                            ) {
                                 Icon(
                                     imageVector = Icons.Filled.ArrowBack,
                                     contentDescription = null,

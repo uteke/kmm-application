@@ -1,6 +1,5 @@
 package com.uteke.kmm.android.view.screen
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -8,18 +7,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import coil.transform.CircleCropTransformation
-import com.uteke.kmm.feature.common.ErrorState
 import com.uteke.kmm.feature.productitem.ProductItemAction
+import com.uteke.kmm.feature.productitem.ProductItemState
 import com.uteke.kmm.feature.productitem.ProductItemViewModel
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.mapLatest
 
-@SuppressLint("FlowOperatorInvokedInComposition")
-@ExperimentalCoroutinesApi
 @Composable
 fun ProductItemScreen(
     modifier: Modifier,
@@ -33,108 +29,93 @@ fun ProductItemScreen(
         onDispose { viewModel.cancel() }
     }
 
-    val isLoaderVisible by viewModel.stateChanges
-        .mapLatest { it.isLoaderVisible }
-        .distinctUntilChanged()
-        .collectAsState(false)
+    val viewState by viewModel.stateChanges.collectAsState()
 
-    val errorState by viewModel.stateChanges
-        .mapLatest { it.errorState }
-        .distinctUntilChanged()
-        .collectAsState(ErrorState())
+    ProductItemContent(modifier = modifier, viewState = viewState)
+}
 
-    val images by viewModel.stateChanges
-        .mapLatest { it.images }
-        .distinctUntilChanged()
-        .collectAsState(emptyList())
-
-    val title by viewModel.stateChanges
-        .mapLatest { it.title }
-        .distinctUntilChanged()
-        .collectAsState("")
-
-    val description by viewModel.stateChanges
-        .mapLatest { it.description }
-        .distinctUntilChanged()
-        .collectAsState("")
-
-    val kind by viewModel.stateChanges
-        .mapLatest { it.kind }
-        .distinctUntilChanged()
-        .collectAsState("")
-
-    val type by viewModel.stateChanges
-        .mapLatest { it.type }
-        .distinctUntilChanged()
-        .collectAsState("")
-
-    val ingredients by viewModel.stateChanges
-        .mapLatest { it.ingredients }
-        .distinctUntilChanged()
-        .collectAsState("")
-
-    val allergens by viewModel.stateChanges
-        .mapLatest { it.allergens }
-        .distinctUntilChanged()
-        .collectAsState("")
-
-    Column(modifier = modifier) {
-        LazyRow(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
-            items(
-                count = images.size,
-                key = { index -> images[index] },
-                itemContent = { index ->
-                    Image(
-                        painter = rememberImagePainter(
-                            data = images[index],
-                            builder = {
-                                crossfade(enable = true)
-                                transformations(CircleCropTransformation())
-                            }
-                        ),
-                        contentDescription = null,
-                        modifier = Modifier.size(128.dp)
-                    )
-                }
+@Composable
+private fun ProductItemContent(
+    modifier: Modifier,
+    viewState: ProductItemState
+) {
+    with(viewState) {
+        Column(modifier = modifier) {
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+            ) {
+                items(count = images.size,
+                    key = { index -> images[index] },
+                    itemContent = { index ->
+                        Image(
+                            contentDescription = null,
+                            modifier = Modifier.size(128.dp),
+                            painter = rememberAsyncImagePainter(
+                                ImageRequest.Builder(androidx.compose.ui.platform.LocalContext.current)
+                                    .data(images[index])
+                                    .crossfade(true)
+                                    .transformations(CircleCropTransformation())
+                                    .build()
+                            ),
+                        )
+                    })
+            }
+            Text(
+                modifier = Modifier.padding(bottom = 8.dp),
+                text = title,
+                style = MaterialTheme.typography.headlineLarge,
             )
-        }
-        Text(
-            text = title,
-            style = MaterialTheme.typography.headlineLarge,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
-        Text(
-            text = description,
-            style = MaterialTheme.typography.titleMedium,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
-        Text(
-            text = kind,
-            style = MaterialTheme.typography.titleSmall,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
-        Text(
-            text = type,
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
-        Text(
-            text = ingredients,
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
-        Text(
-            text = allergens,
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
+            Text(
+                modifier = Modifier.padding(bottom = 8.dp),
+                text = description,
+                style = MaterialTheme.typography.titleMedium,
+            )
+            Text(
+                modifier = Modifier.padding(bottom = 8.dp),
+                text = kind,
+                style = MaterialTheme.typography.titleSmall,
+            )
+            Text(
+                modifier = Modifier.padding(bottom = 8.dp),
+                text = type,
+                style = MaterialTheme.typography.bodyMedium,
+            )
+            Text(
+                modifier = Modifier.padding(bottom = 8.dp),
+                text = ingredients,
+                style = MaterialTheme.typography.bodyMedium,
+            )
+            Text(
+                modifier = Modifier.padding(bottom = 8.dp),
+                text = allergens,
+                style = MaterialTheme.typography.bodyMedium,
+            )
 
-        if (isLoaderVisible) {
-            LoaderView(modifier = Modifier.fillMaxSize())
-        }
+            if (isLoaderVisible) {
+                LoaderView(modifier = Modifier.fillMaxSize())
+            }
 
-        if (errorState.isVisible) {
-            ErrorView(modifier = Modifier.fillMaxSize(), message = errorState.message)
+            if (errorState.isVisible) {
+                ErrorView(
+                    modifier = Modifier.fillMaxSize(),
+                    message = errorState.message,
+                )
+            }
         }
     }
+}
+
+@Preview
+@Composable
+private fun ProductItemContentPreview() = MaterialTheme {
+    ProductItemContent(
+        modifier = Modifier,
+        viewState = ProductItemState(
+            isLoaderVisible = false,
+            id = 1,
+            title = "Burrata",
+            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+            kind = "Milk",
+        )
+    )
 }

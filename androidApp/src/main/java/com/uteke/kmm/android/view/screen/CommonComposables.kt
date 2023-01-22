@@ -12,8 +12,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun LoaderView(modifier: Modifier = Modifier) {
     Box(
+        modifier = modifier,
         contentAlignment = Alignment.Center,
-        modifier = modifier
     ) {
         CircularProgressIndicator(progress = 0.5f)
     }
@@ -22,8 +22,8 @@ fun LoaderView(modifier: Modifier = Modifier) {
 @Composable
 fun ErrorView(modifier: Modifier = Modifier, message: String) {
     Box(
+        modifier = modifier,
         contentAlignment = Alignment.Center,
-        modifier = modifier
     ) {
         Text(
             text = message,
