@@ -8,6 +8,8 @@ import com.uteke.kmm.feature.productlist.GetProductsUseCase
 import com.uteke.kmm.feature.productlist.ProductListViewModel
 import kotlinx.coroutines.FlowPreview
 import org.koin.core.module.Module
+import org.koin.core.module.dsl.factoryOf
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 expect val commonModule: Module
@@ -24,12 +26,7 @@ val productListModule = module {
         )
     }
 
-    factory<GetProductsUseCase> {
-        GetProductsFetchUseCase(
-            productDao = get(),
-            productService = get()
-        )
-    }
+    factoryOf(::GetProductsFetchUseCase) bind GetProductsUseCase::class
 }
 
 val productItemModule = module {
@@ -42,9 +39,5 @@ val productItemModule = module {
         )
     }
 
-    factory<GetProductUseCase> {
-        GetProductCachedUseCase(
-            productDao = get()
-        )
-    }
+    factoryOf(::GetProductCachedUseCase) bind GetProductUseCase::class
 }
